@@ -57,8 +57,8 @@ struct bbox_t_container {
 #endif
 
 extern "C" LIB_API int init(const char *configurationFilename, const char *weightsFilename, int gpu);
-extern "C" LIB_API int detect_image(const char *filename, bbox_t_container &container);
-extern "C" LIB_API int detect_mat(const uint8_t* data, const size_t data_length, bbox_t_container &container);
+extern "C" LIB_API int detect_image(const char *filename, bbox_t_container &container, float thresh = 0.2f);
+extern "C" LIB_API int detect_mat(const uint8_t* data, const size_t data_length, bbox_t_container &container, float thresh = 0.2f);
 extern "C" LIB_API int dispose();
 extern "C" LIB_API int get_device_count();
 extern "C" LIB_API int get_device_name(int gpu, char* deviceName);
